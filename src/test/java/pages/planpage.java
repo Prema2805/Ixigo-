@@ -16,7 +16,7 @@ public class planpage {
     // Locators
     private By popupClose = By.xpath("//div[contains(@class,'ixiIcon-cross') or @aria-label='close']");
     private By planIcon = By.xpath("/html/body/main/div[2]/div[2]/div/div/div/div[13]/a/span");
-    private By manaliCard = By.xpath("/html/body/div[1]/div[2]/div/div[2]/a[1]/div[1]/div");
+    private By Festivals = By.cssSelector("body > div.min-h-full.flex.flex-col.page_container__oILIU > div.max-w-screen-2xl.flex.mx-auto.grow.w-full.page_exploreBody__sc0QV > div > div.flex.gap-40.overflow-x-auto.px-20.xl\\:px-30.border-b.border-secondary.xl\\:border-none.no-scrollbar > div:nth-child(6)");
 
     // Handle popup if present
     public void handlePopup() {

@@ -4,4 +4,4 @@ Feature: Plan a trip
     Given the user is on the ixigo homepage
     When the user clicks the Plan icon
     And the user clicks on Festivals
-    Then the festivals page should open
+    Then the Festivals page should open

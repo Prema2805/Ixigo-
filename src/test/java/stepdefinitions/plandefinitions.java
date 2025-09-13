@@ -29,8 +29,8 @@ public class plandefinitions {
         planPage.clickFestivals();
     }
 
-    @Then("the Manali page should open")
-    public void the_manali_page_should_open() {
-        System.out.println("Manali page opened successfully.");
+    @Then("the Festivals page should open")
+    public void the_Festivals_page_should_open() {
+        System.out.println("Festivals page opened successfully.");
     }
 }
