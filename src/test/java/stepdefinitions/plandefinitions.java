@@ -24,9 +24,9 @@ public class plandefinitions {
         planPage.clickPlanIcon();
     }
 
-    @When("the user clicks on Manali")
-    public void the_user_clicks_on_manali() {
-        planPage.clickManali();
+    @When("the user clicks on Festivals")
+    public void the_user_clicks_on_Festivals() {
+        planPage.clickFestivals();
     }
 
     @Then("the Manali page should open")

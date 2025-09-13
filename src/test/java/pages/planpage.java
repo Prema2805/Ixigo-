@@ -39,8 +39,8 @@ public class planpage {
     }
 
     // Click the Manali card
-    public void clickManali() {
-        driver.findElement(manaliCard).click();
-        System.out.println("Clicked Manali card.");
+    public void clickFestivals() {
+        driver.findElement(By.cssSelector("body > div.min-h-full.flex.flex-col.page_container__oILIU > div.max-w-screen-2xl.flex.mx-auto.grow.w-full.page_exploreBody__sc0QV > div > div.flex.gap-40.overflow-x-auto.px-20.xl\\:px-30.border-b.border-secondary.xl\\:border-none.no-scrollbar > div:nth-child(6)")).click();
+        System.out.println("Clicked Festivals.");
     }
 }
