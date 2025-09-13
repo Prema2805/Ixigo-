@@ -13,7 +13,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
-public class reporter {
+public class Reporter {
 
     private static final String SCREENSHOTS_DIR = System.getProperty("user.dir")
             + File.separator + "reports" + File.separator + "screenshots";

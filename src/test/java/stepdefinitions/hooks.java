@@ -16,24 +16,20 @@ import io.cucumber.java.Scenario;
 
 public class hooks extends Base {
 
-	public static WebDriver driver; // WebDriver instance
+	public static WebDriver driver; 
 	public static ExtentReports extReports;
 	public static ExtentTest extTest;
 	public static ExtentSparkReporter spark;
 
-	// Make excelData static
 	public static String[][] excelData;
 	public static int currentrow = 0;
 
 	@BeforeAll
 	public static void setup() {
-		// Initialize excelData in a static method that runs once
 		try {
 			excelData = excelreader.readData();
 		} catch (Exception e) {
 			e.printStackTrace();
-			// Handle the exception appropriately, e.g., by throwing a more specific
-			// exception
 			throw new RuntimeException("Failed to read data from Excel file.", e);
 		}
 
@@ -51,16 +47,17 @@ public class hooks extends Base {
 
 	@Before
 	public void setUp(Scenario scenario) {
-		launchBrowser(); // Initialize driver
-		driver = Base.driver; // Assign driver from Base
+		// ✅ Launch browser only once per scenario
+		launchBrowser(); // This uses Base.launchBrowser()
+		driver = Base.driver;
 		extTest = extReports.createTest(scenario.getName());
 	}
 
 	@After
 	public void tearDown() {
 		Base.sleep();
-		
-		  if (driver != null) { driver.quit(); }
-		 
+		if (driver != null) {
+			driver.quit();
+		}
 	}
 }

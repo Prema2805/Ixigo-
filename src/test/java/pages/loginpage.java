@@ -13,8 +13,8 @@ import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import objectrepository.locators;
-import parameters.reporter;
+import objectrepository.Locators;
+import parameters.Reporter;
 
 public class loginpage {
 
@@ -30,18 +30,18 @@ public class loginpage {
 
     /** Click on Login button */
     public void clickLoginButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(locators.loginbutton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(Locators.loginbutton)).click();
     }
 
     /** Enter mobile number into login field */
     public boolean enterMobileNumber(String mobile) {
         clickLoginButton();
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(locators.mobile)).sendKeys(mobile);
-            reporter.generateReport(driver, extTest, Status.PASS, "Mobile number entered");
+            wait.until(ExpectedConditions.visibilityOfElementLocated(Locators.mobile)).sendKeys(mobile);
+            Reporter.generateReport(driver, extTest, Status.PASS, "Mobile number entered");
             return true;
         } catch (Exception e) {
-            reporter.generateReport(driver, extTest, Status.FAIL, "Failed to enter mobile number");
+            Reporter.generateReport(driver, extTest, Status.FAIL, "Failed to enter mobile number");
             return false;
         }
     }
@@ -49,11 +49,11 @@ public class loginpage {
     /** Click Continue after entering mobile number */
     public boolean clickContinueForMobile() {
         try {
-            wait.until(ExpectedConditions.elementToBeClickable(locators.continuebutton)).click();
-            reporter.generateReport(driver, extTest, Status.PASS, "Clicked Continue for mobile");
+            wait.until(ExpectedConditions.elementToBeClickable(Locators.continuebutton)).click();
+            Reporter.generateReport(driver, extTest, Status.PASS, "Clicked Continue for mobile");
             return true;
         } catch (Exception e) {
-            reporter.generateReport(driver, extTest, Status.FAIL, "Failed to click Continue");
+            Reporter.generateReport(driver, extTest, Status.FAIL, "Failed to click Continue");
             return false;
         }
     }
@@ -66,11 +66,11 @@ public class loginpage {
             String otp = sc.nextLine();
             sc.close();
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(locators.otpInputs)).sendKeys(otp);
-            reporter.generateReport(driver, extTest, Status.PASS, "OTP entered");
+            wait.until(ExpectedConditions.visibilityOfElementLocated(Locators.otpInputs)).sendKeys(otp);
+            Reporter.generateReport(driver, extTest, Status.PASS, "OTP entered");
             return true;
         } catch (Exception e) {
-            reporter.generateReport(driver, extTest, Status.FAIL, "Failed to enter OTP");
+            Reporter.generateReport(driver, extTest, Status.FAIL, "Failed to enter OTP");
             return false;
         }
     }
@@ -79,10 +79,10 @@ public class loginpage {
     public boolean navigatedpage() {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='One Way']")));
-            reporter.generateReport(driver, extTest, Status.PASS, "Flight details displayed");
+            Reporter.generateReport(driver, extTest, Status.PASS, "Flight details displayed");
             return true;
         } catch (TimeoutException te) {
-            reporter.generateReport(driver, extTest, Status.FAIL, "Navigation failed");
+            Reporter.generateReport(driver, extTest, Status.FAIL, "Navigation failed");
             return false;
         }
     }
@@ -90,7 +90,7 @@ public class loginpage {
     /** Enter an invalid number for negative testing */
     public void invalidnumber(String number) {
         clickLoginButton();
-        WebElement mobileInput = wait.until(ExpectedConditions.visibilityOfElementLocated(locators.mobile));
+        WebElement mobileInput = wait.until(ExpectedConditions.visibilityOfElementLocated(Locators.mobile));
         mobileInput.clear();
         mobileInput.sendKeys(number);
     }

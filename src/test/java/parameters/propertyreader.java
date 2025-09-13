@@ -9,7 +9,7 @@ public class propertyreader {
 
 	public static Properties readProperties() {
 
-		String filename = "src\\test\\resources\\Config\\config.properties";
+		String filename = "src\\test\\resources\\config\\config.properties";
 		Properties prop = null;
 		try {
 			FileInputStream fis = new FileInputStream(filename);

@@ -50,6 +50,7 @@ public class searchdefinitions {
     	int row = hooks.currentrow;
     	to = hooks.excelData[row][6];
         search.enterLandingPlace(to);
+        search.enteringdate("23-09-2025","29-09-2025");
     }
 
     @When("the user sets travellers as {string} adults, {string} children, {string} infants and class as {string}")
